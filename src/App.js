@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+
+const athletes = [
+  {id: 1, name: "Usain Bolt", speciality: "100m"},
+  {id: 2, name: "Mondo Duplantis", speciality: "Pole Vault"},
+  {id: 3, name: "Ating Mu", speciality: "800m"}
+]
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return(
+    <div>
+      <h1>Athlete List</h1>
+      <ul>
+        {athletes.map((athlete => (
+          <li key={athlete.id}> {athlete.name} - {athlete.speciality}</li>
+        )))}
+      </ul>
     </div>
-  );
+  )
 }
 
 export default App;
