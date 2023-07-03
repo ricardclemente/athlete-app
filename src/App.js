@@ -1,10 +1,12 @@
 import React from 'react';
+import Athlete from './Athlete';
+
 
 const athletes = [
-  {id: 1, name: "Usain Bolt", speciality: "100m"},
-  {id: 2, name: "Mondo Duplantis", speciality: "Pole Vault"},
-  {id: 3, name: "Ating Mu", speciality: "800m"}
-]
+  new Athlete(1, "Usain Bolt", "100m"),
+  new Athlete(2, "Mondo Duplantis", "Pole Vault"),
+  new Athlete(3, "Ating Mu", "800m")
+];
 
 function App() {
   return(
@@ -12,7 +14,7 @@ function App() {
       <h1>Athlete List</h1>
       <ul>
         {athletes.map((athlete => (
-          <li key={athlete.id}> {athlete.name} - {athlete.speciality}</li>
+          athlete.getResume()
         )))}
       </ul>
     </div>
